@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-8-16 10:01:12 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.nirvana.entity.User" table="USER">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+            <!--
+            <generator class="?"> 的参数:
+            1. increment: 用于为long, short或者int类型生成 唯一标识。只有在没有其他进程往同一张表中插入数据时才能使用。 在集群下不要使用。
+            2. identity: 对DB2,MySQL, MS SQL Server, Sybase和HypersonicSQL的内置标识字段提供支持。 返回的标识符是long, short 或者int类型的。
+            3. sequence: 在DB2,PostgreSQL, Oracle, SAP DB, McKoi中使用序列（sequence)， 而在Interbase中使用生成器(generator)。返回的标识符是long, short或者 int类型的。
+            4. hilo: 使用一个高/低位算法高效的生成long, short 或者 int类型的标识符。给定一个表和字段（默认分别是 hibernate_unique_key 和next_hi）作为高位值的来源。 高/低位算法生成的标识符只在一个特定的数据库中是唯一的。
+            5. seqhilo: 使用一个高/低位算法来高效的生成long, short 或者 int类型的标识符，给定一个数据库序列（sequence)的名字。
+            6. uuid: 用一个128-bit的UUID算法生成字符串类型的标识符， 这在一个网络中是唯一的（使用了IP地址）。UUID被编码为一个32位16进制数字的字符串。
+            7. guid: 在MS SQL Server 和 MySQL 中使用数据库生成的GUID字符串。
+            8. native: 根据底层数据库的能力选择identity, sequence 或者hilo中的一个。
+            9. assigned: 让应用程序在save()之前为对象分配一个标示符。这是 <generator>元素没有指定时的默认生成策略。
+            10. select: 通过数据库触发器选择一些唯一主键的行并返回主键值来分配一个主键。
+            11. foreign: 使用另外一个相关联的对象的标识符。通常和<one-to-one>联合起来使用。
+            12. sequence-identity: 一种特别的序列生成策略,使用数据库序列来生成实际值,但将它和JDBC3的getGeneratedKeys结合在一起,使得在插入语句执行的时候就返回生成的值。目前为止只有面向JDK 1.4的Oracle 10g驱动支持这一策略。注意，因为Oracle驱动程序的一个bug，这些插入语句的注释被关闭了。（原文：Note comments on these insert statements are disabled due to a bug in the Oracle drivers.）
+             -->
+        </id>
+        <property name="username" type="java.lang.String">
+            <column name="USERNAME" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <property name="birthday" type="java.util.Date">
+            <column name="BIRTHDAY" />
+        </property>
+    </class>
+</hibernate-mapping>
